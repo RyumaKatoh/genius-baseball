@@ -1,24 +1,61 @@
-# README
+# テーブル設計
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## users テーブル
 
-Things you may want to cover:
+| Column             | Type    | Options                   |
+| ------------------ | ------- | ------------------------- |
+| nickname           | string  | null: false               |
+| email              | string  | null: false, unique: true |
+| encrypted_password | string  | null: false               |
+| last_name          | string  | null: false               |
+| first_name         | string  | null: false               |
+| last_name_kana     | string  | null: false               |
+| first_name_kana    | string  | null: false               |
 
-* Ruby version
+### Association
 
-* System dependencies
+- has_many :practices
+- has_many :comments
+- has_many :favorites, dependent: :destroy     # ユーザー/お気に入り → 1:多
 
-* Configuration
 
-* Database creation
+### practices テーブル
 
-* Database initialization
+| Column               | Type       | Options                        |
+| -------------------- | ---------- | -------------------------------|
+| player_id            | integer    | null: false                    |
+| attempt_id           | integer    | null: false                    |
+| point                | text       | null: false                    |
+| user                 | references | null: false, foreign_key: true |
 
-* How to run the test suite
+### Association
 
-* Services (job queues, cache servers, search engines, etc.)
+- belongs_to :user
+- has_many   :comments
+- has_many   :favorites, dependent: :destroy
 
-* Deployment instructions
 
-* ...
+## comments テーブル
+| Column     | Type       | Options                        |
+| ---------- | ---------- | ------------------------------ |
+| content    | text       | null: false,                   |
+| practice   | references | null: false, foreign_key: true |
+| user       | references | null: false, foreign_key: true |
+
+### Association
+
+- belongs_to :user
+- belongs_to :practice
+
+
+## favorites テーブル
+
+| Column          | Type       | Options                        |
+| --------------- | ---------- | ------------------------------ |
+| user            | references | null: false, foreign_key: true |
+| practice        | references | null: false, foreign_key: true |
+
+### Association
+
+- belongs_to :practice
+- belongs_to :user
