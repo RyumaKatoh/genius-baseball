@@ -1,6 +1,12 @@
 Rails.application.routes.draw do
-  # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
+#   # マイページのルーティングにネスト
+#   resources :users, only: [:show, :edit, :update] do
+#     get :favorites, on: :collection
+#   end
 
-  # Defines the root path route ("/")
-  # root "articles#index"
+# # 練習投稿表示のルーティングにネスト
+#   resources :practices do
+#     resources :comments do
+#     resource :favorites, only: [:create, :destroy]
+#   end
 end
