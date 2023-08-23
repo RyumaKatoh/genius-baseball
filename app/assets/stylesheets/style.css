@@ -141,7 +141,8 @@ a {
   margin-bottom: 20px;
 }
 .greeting__link{
-  text-decoration: underline;
+  text-decoration: none;
+  font-weight: bold;
 }
 .page-heading {
   font-size: 30px;

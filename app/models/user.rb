@@ -13,8 +13,8 @@ class User < ApplicationRecord
 
   # 全角文字指定のバリデーション
   with_options presence: true, format: { with: /\A[ぁ-んァ-ヶ一-龥々ー]+\z/, message: 'is invalid. Input full-width characters' } do
-    validates :first_name
     validates :last_name
+    validates :first_name
   end
   # 全角カナ指定のバリデーション
   with_options presence: true, format: { with: /\A[ァ-ヶー－]+\z/, message: 'is invalid. Input full-width katakana characters' } do
