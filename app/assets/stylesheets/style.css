@@ -114,17 +114,33 @@ a {
 .page-heading1{
   text-align: center;
   margin-bottom: 20px;
+  color:#87CEFA;
 }
 .form__wrapper{
   min-height: calc(100vh - 161px);
+  display: flex;
+  justify-content: center;
+}
+.form__border{
+  padding-top:20px ;
+  border:5px solid white;
+  border-radius: 10px;
+  height:450px;
+  width:500px;
+  display: block;
+  justify-content: center;
 }
 .form_serect{
   width:100px;
 }
 .form__text {
-  width: 35%;
+  width: 30vw;
   height: calc( 1.3em * 5 );
   line-height: 1.3;
+}
+.fielder{
+  color:white;
+  
 }
 .field-pulldown{
   text-align: center;
