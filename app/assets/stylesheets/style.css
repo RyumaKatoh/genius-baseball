@@ -134,7 +134,7 @@ a {
   width:100px;
 }
 .form__text {
-  width: 30vw;
+  width: 55%;
   height: calc( 1.3em * 5 );
   line-height: 1.3;
 }
