@@ -1,6 +1,6 @@
 class Practice < ApplicationRecord
   belongs_to :user
-  # has_many :comments
+  has_many :comments
   # has_many :favorites, dependent: :destroy
   has_one_attached :video
   

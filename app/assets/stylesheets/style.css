@@ -275,8 +275,6 @@ a {
   align-items: center;
   flex-direction: column;
   margin-bottom: 8px;
-  /* border: 2px solid white;
-  border-radius: 10px; */
 }
 .detail__title{
   font-size: 20px;
@@ -307,9 +305,7 @@ a {
 }
 
 .practice__comments{
-  /* background-color: #f6f6f6; */
   padding: 20px 0 40px 0;
-  /* margin: 28px 0 40px 0;  */
 }
 
 .comments_lists{

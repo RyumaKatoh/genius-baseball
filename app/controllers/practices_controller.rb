@@ -20,6 +20,8 @@ class PracticesController < ApplicationController
   end
 
   def show
+    @comment = Comment.new
+    @comments = @practice.comments.includes(:user)
   end  
 
   def edit
