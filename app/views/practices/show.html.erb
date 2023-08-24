@@ -5,24 +5,25 @@
         <%= @practice.attempt.name%></font>
       </p>
       <%= link_to "投稿者　 #{@practice.user.nickname}", root_path, class: :practice__user %>
-      <% if @practice.user_id == current_user.id %>
+      <% if user_signed_in? && @practice.user_id == current_user.id %>
         <div class="practice__manage">
-          <%= link_to "編集する", root_path, class: :practice__btn %>
-          <%= link_to "削除する", root_path, class: :practice__btn %>
+          <%= link_to "編集する", edit_practice_path(@practice.id), class: :practice__btn %>
+          <%= link_to "削除する", practice_path(@practice.id),data: {turbo_method: :delete}, class: :practice__btn %>
         </div>
       <% end %>  
       <div class="practice__image">
         <%= video_tag url_for(@practice.video), class: :card__img, controls: true %>
       </div>
+      <% if @practice.point.present? %>
       <div class="practice__body">
         <div class="practice__detail">
           <p class="detail__title">～見てほしいポイント～</p>
-          <p class="detail__message">
+          <p class="detail__message" >
             <%= @practice.point %>
           </p>
         </div>
       </div>
-      
+      <% end %>
       <div class="practice__comments">
         <%# ログインしているユーザーには以下のコメント投稿フォームを表示する %>
           <%# <%= form_with model: モデル名,local: true do |f|%>

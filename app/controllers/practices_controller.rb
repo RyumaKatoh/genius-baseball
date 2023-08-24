@@ -1,6 +1,6 @@
 class PracticesController < ApplicationController
   before_action :authenticate_user!, only: [:new, :edit, :destroy]
-  before_action :set_practice, only: [:show, :edit, :update]
+  before_action :set_practice, only: [:show, :edit, :update, :destroy]
 
   def index
     @practices = Practice.includes(:user).order(created_at: :desc) 
@@ -37,6 +37,15 @@ class PracticesController < ApplicationController
       redirect_to practice_path(@practice.id)
     else
       render :edit, status: :unprocessable_entity  
+    end   
+  end  
+
+  def destroy
+    if user_signed_in? && @practice.user == current_user
+      @practice.destroy
+      redirect_to root_path
+    else
+      redirect_to practice_path(@practice.id) 
     end   
   end  
   
