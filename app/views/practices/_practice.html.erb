@@ -1,8 +1,10 @@
 <div class="card">
   <div class="card__body">
     <font color="white"><%= link_to practice.player.name, practice_path(practice.id), class: :card__title%></font>
-    <%= link_to practice.attempt.name, practice_path(practice.id), class: :card__summary %>
-    <%= link_to "by #{practice.user.nickname}",root_path, class: :card__user %>
+    <div class="card__header">
+      <%= link_to practice.attempt.name, practice_path(practice.id), class: :card__summary %>
+      <%= link_to "投稿者　 #{practice.user.nickname}",root_path, class: :card__user %>
+    </div>
     <% if practice.video.attached? %>
       <%= video_tag url_for(practice.video), class: :card__img, controls: true %>
     <% end %>

@@ -1,6 +1,6 @@
 class PracticesController < ApplicationController
   before_action :authenticate_user!, only: [:new, :edit, :destroy]
-  before_action :set_practice, only: [:edit, :update]
+  before_action :set_practice, only: [:show, :edit, :update]
 
   def index
     @practices = Practice.includes(:user).order(created_at: :desc) 
@@ -18,6 +18,9 @@ class PracticesController < ApplicationController
       render :new, status: :unprocessable_entity
     end
   end
+
+  def show
+  end  
 
   def edit
     @practice = Practice.find(params[:id])
