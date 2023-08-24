@@ -1,4 +1,5 @@
 class PracticesController < ApplicationController
+  before_action :authenticate_user!, only: [:new, :edit, :destroy]
 
   def index
     @practices = Practice.includes(:user).order(created_at: :desc) 
