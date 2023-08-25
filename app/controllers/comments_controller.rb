@@ -8,8 +8,6 @@ class CommentsController < ApplicationController
     @practice = Practice.find(params[:id])
     if user_signed_in? && @practice.comment.user_id == current_user.id
       comment.destroy
-      redirect_to root_path
-    else  
       redirect_to practice_path(@practice.id)
     end
   end
