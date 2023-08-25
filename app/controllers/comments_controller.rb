@@ -1,11 +1,15 @@
 class CommentsController < ApplicationController
   def create
-    comment = Comment.create(comment_params)
-    redirect_to "/practices/#{comment.practice.id}"
+    if user_signed_in?
+      comment = Comment.create(comment_params)
+      redirect_to "/practices/#{comment.practice.id}"
+    else 
+      redirect_to user_session_path 
+    end   
   end
   def destroy
     comment = Comment.find(params[:id])
-    @practice = Practice.find(params[:id])
+    @practice = Practice.find(params[:practice_id])
     if user_signed_in? && @practice.comment.user_id == current_user.id
       comment.destroy
       redirect_to practice_path(@practice.id)

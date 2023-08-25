@@ -25,7 +25,7 @@
       </div>
       <% end %>
       <div class="practice__comments">
-        <% if user_signed_in? %>
+        <%# コメントフォームは常に表示するが、未ログイン状態で投稿しようとしたらログイン画面へ %> 
           <%= form_with model: [@practice, @comment], local: true do |f|%>
             <div class="field2">
               <%= f.label :content, "～ コメント ～", class:"comment__header" %><br />
@@ -35,8 +35,7 @@
                <%= f.text_field :content, class:"comment__content", id:"comment_content" %>
                <%= f.submit "送信する", class: :form__btn  %>
             </div>
-           <% end %>
-          <% end %>
+           <% end %> 
           <ul class="comments_lists">
             <% @comments.each do |comment| %>
               <li class="comments_list">
@@ -51,7 +50,7 @@
                  <%= link_to comment.user.nickname, "/users/#{comment.user_id}", class: :comment_user %>
                  <% if user_signed_in? && comment.user_id == current_user.id %>
                   <div class="comment__manage">
-                    <%= link_to "削除する", practice_comment_path(comment.id),data: {turbo_method: :delete}, class: :practice__btn %>
+                    <%= link_to "削除する", practice_comment_path(@practice, comment), data: {turbo_method: :delete}, class: :practice__btn %>
                   </div>
                  <% end %>
               </li>

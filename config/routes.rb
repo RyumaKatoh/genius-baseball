@@ -8,7 +8,7 @@ Rails.application.routes.draw do
 
 # # 練習投稿表示のルーティングにネスト
   resources :practices do
-     resources :comments , only: [:create, :destroy]
+     resources :comments , only: [:create, :destroy] 
 # #     resource :favorites, only: [:create, :destroy]
   end
 end
