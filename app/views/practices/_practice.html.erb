@@ -6,7 +6,11 @@
       <%= link_to "投稿者　 #{practice.user.nickname}",root_path, class: :card__user %>
     </div>
     <% if practice.video.attached? %>
-      <%= video_tag url_for(practice.video), class: :card__img, controls: true %>
-    <% end %>
+      <% if practice.video.image? %>
+        <%= image_tag practice.video, class: :card__img %>
+      <% else %>
+        <%= video_tag url_for(practice.video), class: :card__img, controls: true %>
+      <% end %>
+    <% end %> 
   </div>
 </div>

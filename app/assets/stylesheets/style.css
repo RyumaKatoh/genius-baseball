@@ -305,22 +305,47 @@ a {
 }
 
 .practice__comments{
-  padding: 20px 0 40px 0;
+  padding: 0px 0 40px 0;
+}
+.comment__content{
+  height: calc( 1.0em * 3 );
+  width:25%;
+  margin-right: 10px;
 }
 
 .comments_lists{
-  padding-left: 20px;
+  padding-left: 25%;
 }
-
+.field2{
+  text-align: center;
+  margin-top: 40px;
+}
+.comment__header{
+  font-weight: bold;
+}
+.actions1{
+  margin-bottom: 40px;
+  margin-top: 10px;
+  text-align: center;
+}
 .comments_list{
-  list-style-type: square;
-  padding-bottom: 5px;
+  /* list-style: square; */
+  padding:15px;
+  width:67%;
+  border: 2px solid lightgreen;
+  border-radius: 10px;
+  margin-bottom: 10px;
 }
-
+.card__img1{
+  margin-bottom: 16px;
+  height:100%;
+  width:100%;
+}
 .comment_user{
   font-size: 16px;
-  color: #999;
+  color: lightblue;
   text-decoration: underline;
+  margin-left: 10px;
 }
 
 /* ユーザーページ */
