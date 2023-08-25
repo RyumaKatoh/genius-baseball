@@ -329,12 +329,16 @@ a {
   text-align: center;
 }
 .comments_list{
-  /* list-style: square; */
-  padding:15px;
+  padding:15px 15px 5px 15px;
   width:67%;
   border: 2px solid lightgreen;
   border-radius: 10px;
   margin-bottom: 10px;
+}
+.comment__manage{
+  display: flex;
+  justify-content:center;
+  padding-top: 10px;
 }
 .card__img1{
   margin-bottom: 16px;
