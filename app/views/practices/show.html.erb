@@ -49,6 +49,11 @@
                 <% end %>   
                  <%= comment.content%>
                  <%= link_to comment.user.nickname, "/users/#{comment.user_id}", class: :comment_user %>
+                 <% if user_signed_in? && comment.user_id == current_user.id %>
+                  <div class="comment__manage">
+                    <%= link_to "削除する", practice_comment_path(comment.id),data: {turbo_method: :delete}, class: :practice__btn %>
+                  </div>
+                 <% end %>
               </li>
             <% end %>
           </ul>
