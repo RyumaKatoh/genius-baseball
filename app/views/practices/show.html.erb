@@ -27,26 +27,32 @@
       <div class="practice__comments">
         <% if user_signed_in? %>
           <%= form_with model: [@practice, @comment], local: true do |f|%>
-            <div class="field">
-              <%= f.label :content, "コメント" %><br />
-              <%= f.text_field :content, id:"comment_content" %>
+            <div class="field2">
+              <%= f.label :content, "～ コメント ～", class:"comment__header" %><br />
+              <%= f.file_field :video, id:"prototype_image" %> 
             </div>
-            <div class="actions">
+            <div class="actions1">
+               <%= f.text_field :content, class:"comment__content", id:"comment_content" %>
                <%= f.submit "送信する", class: :form__btn  %>
             </div>
            <% end %>
           <% end %>
-
-        <ul class="comments_lists">
-    
-          <% @comments.each do |comment| %>
-            <li class="comments_list">
-               <%= comment.content%>
-               <%= link_to comment.user.nickname, "/users/#{comment.user_id}", class: :comment_user %>
-            </li>
-          <% end %>
-        </ul>
-      </div>
+          <ul class="comments_lists">
+            <% @comments.each do |comment| %>
+              <li class="comments_list">
+                <% if comment.video.attached? %>
+                  <% if comment.video.image? %>
+                    <%= image_tag comment.video, class: :card__img1 %>
+                  <% else %>
+                    <%= video_tag url_for(comment.video), class: :card__img1, controls: true %>
+                  <% end %>
+                <% end %>   
+                 <%= comment.content%>
+                 <%= link_to comment.user.nickname, "/users/#{comment.user_id}", class: :comment_user %>
+              </li>
+            <% end %>
+          </ul>
+        </div>
     </div>
   </div>
 </main>
