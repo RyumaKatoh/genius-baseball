@@ -10,10 +10,18 @@
           <%= link_to "編集する", edit_practice_path(@practice.id), class: :practice__btn %>
           <%= link_to "削除する", practice_path(@practice.id),data: {turbo_method: :delete}, class: :practice__btn %>
         </div>
-      <% end %>  
-      <div class="practice__image">
-        <%= video_tag url_for(@practice.video), class: :card__img, controls: true %>
-      </div>
+      <% end %> 
+
+      <% @practice.videos.each do |video| %>
+        <div class="practice__image">
+          <% if video.image? %>
+            <%= image_tag video %>
+          <% else %>  
+            <%= video_tag url_for(video), class: :card__img, controls: true %>
+          <% end %> 
+       </div>
+     <% end %>
+
       <% if @practice.point.present? %>
       <div class="practice__body">
         <div class="practice__detail">
