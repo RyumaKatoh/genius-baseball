@@ -1,5 +1,5 @@
 <div class="fielder">
-<%= form_with model: @practice,  local: true do |f|%>
+<%= form_with model: @practice, id: "new_practice", local: true do |f|%>
 <%= render 'shared/error_messages', model: f.object %>
  <div class="field-pulldown">
   <div class="field1">
@@ -12,14 +12,16 @@
     <%= f.collection_select(:attempt_id, Attempt.all, :id, :name, {}, {class: :form_serect, id:"prototype_catch_copy"}) %>
   </div>
  </div>
-
   <div class="field">
-    <%= f.label :video, "練習の動画（画像も可）" %><br />
-    <%= f.file_field :video, id:"prototype_image" %>
+    <%= f.label :videos, "練習の動画（画像も可）" %><br />
+    <div id="previews"></div>
+    <div class="click-upload">
+    <%= f.file_field :videos, name: 'practice[videos][]', data: {index: 0}, id:"practice_videos" %>
+    </div>
   </div>
 
   <div class="field">
-    <%= f.label :point, "見てほしいポイント" %><br />
+    <font color="white"><%= f.label :point, "見てほしいポイント" %></font><br />
     <%= f.text_area :point, placeholder:"例）\n10/24 市柏練習\n下半身の使い方",class: :form__text, id:"prototype_concept" %>
   </div>
 

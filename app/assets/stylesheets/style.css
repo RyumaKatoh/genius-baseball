@@ -125,8 +125,8 @@ a {
   padding-top:20px ;
   border:5px solid white;
   border-radius: 10px;
-  height:450px;
-  width:500px;
+  height:65%;
+  width:400px;
   display: block;
   justify-content: center;
 }
@@ -134,7 +134,7 @@ a {
   width:100px;
 }
 .form__text {
-  width: 55%;
+  width: 65%;
   height: calc( 1.3em * 5 );
   line-height: 1.3;
 }
@@ -179,6 +179,16 @@ a {
   box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.2), 0 1px 8px 0 rgba(0, 0, 0, 0.12);
   cursor: pointer;
 }
+.preview-video{
+  border: 3px solid black;
+}
+.video-delete-button {
+  text-align: center;
+  border: solid 1px;
+  cursor: pointer;
+  padding: 5px;
+  margin-left: 5px;
+}
 
 /* メイン */
 
@@ -216,6 +226,7 @@ a {
   margin-bottom: 16px;
   height:100%;
   width:100%;
+  object-fit: contain;
 }
 .card__title {
   display: block;
@@ -262,7 +273,6 @@ a {
 .practice__image{
   width: 60%;
   margin: 0 auto;
-  padding: 16px 0;
 }
 .practice__body{
   width:50%;
@@ -285,7 +295,7 @@ a {
 .practice__manage{
   display: flex;
   justify-content: center;
-  padding-top: 16px;
+  padding: 16px;
 }
 .practice__btn{
   display: block;
@@ -344,6 +354,7 @@ a {
   margin-bottom: 16px;
   height:100%;
   width:100%;
+  object-fit: contain;
 }
 .comment_user{
   font-size: 16px;

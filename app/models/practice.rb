@@ -2,7 +2,7 @@ class Practice < ApplicationRecord
   belongs_to :user
   has_many :comments
   # has_many :favorites, dependent: :destroy
-  has_one_attached :video
+  has_many_attached :videos
   
   extend ActiveHash::Associations::ActiveRecordExtensions
   belongs_to :player
@@ -15,6 +15,6 @@ class Practice < ApplicationRecord
 
   #空の投稿を保存できないようにする
   with_options presence: true do
-    validates :video
+    validates :videos
   end
 end

@@ -53,7 +53,7 @@ class PracticesController < ApplicationController
   
   private
   def practice_params
-    params.require(:practice).permit(:player_id, :attempt_id, :video, :point).merge(user_id: current_user.id)
+    params.require(:practice).permit(:player_id, :attempt_id, :point, {videos:[] }).merge(user_id: current_user.id)
   end
 
   def set_practice
