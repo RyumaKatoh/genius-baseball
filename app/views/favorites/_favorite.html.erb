@@ -1,11 +1,7 @@
 <%= turbo_frame_tag dom_id(practice, :favorite) do %> 
   <% if user_signed_in? && practice.favorited_by?(current_user)%>
-    
     <%=link_to "お気に入り", practice_favorites_path(practice.id),  data: { turbo_method: :delete }, class: "practice_favorites1" %>
-    
-  <% else %>
-    
+  <% else %> 
     <%=link_to "登録済", practice_favorites_path(practice.id), data: { turbo_method: :post }, class: "practice_favorites2" %>
-     
   <% end %>
 <% end %>  

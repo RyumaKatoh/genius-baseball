@@ -27,6 +27,7 @@ body {
   background-size:cover ;
   background-repeat: no-repeat;
   padding-top: 48px;
+  padding-bottom: 28px;
 }
 
 li {
@@ -52,7 +53,7 @@ a {
 
 }
 .inner {
-  width: 1024px;
+  width: 80%;
   margin: 0 auto;
 }
 .nav {
