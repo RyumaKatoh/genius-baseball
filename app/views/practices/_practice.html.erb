@@ -5,15 +5,15 @@
       <%= link_to practice.attempt.name, practice_path(practice.id), class: :card__summary %>
       <%= link_to "投稿者　 #{practice.user.nickname}",root_path, class: :card__user %>
     </div>
-    <div id="like-btn<%= practice.id %>">
-      <%= render partial: "favorites/favorite", locals: { practice: practice } %>
-    </div>
     <% if practice.videos.attached? %>
       <% if practice.videos[0].image? %>
         <%= image_tag practice.videos[0], class: :card__img %>
       <% else %>
         <%= video_tag url_for(practice.videos[0]), class: :card__img, controls: true %>
       <% end %>
-    <% end %> 
+    <% end %>
+    <div id="like-btn<%= practice.id %>", class="favorite__location">
+      <%= render partial: "favorites/favorite", locals: { practice: practice } %>
+    </div> 
   </div>
 </div>
