@@ -278,6 +278,7 @@ a {
 .practice__image{
   width: 60%;
   margin: 0 auto;
+  margin-top: 10px;
 }
 .practice__body{
   width:50%;
@@ -344,7 +345,7 @@ a {
   text-align: center;
 }
 .comments_list{
-  padding:5px 15px ;
+  padding:10px 15px ;
   width:67%;
   border: 2px solid lightgreen;
   border-radius: 10px;

@@ -6,12 +6,8 @@
       <%= link_to "投稿者　 #{practice.user.nickname}",root_path, class: :card__user %>
     </div>
     <div id="like-btn<%= practice.id %>">
-    <% if user_signed_in? && practice.favorited_by?(current_user)%>
-      <%=link_to "お気に入り済", practice_favorites_path(practice.id),  data: { turbo_method: :delete }, class: "practice_favorites" %>
-    <% else %>
-      <%=link_to "お気に入り登録", practice_favorites_path(practice.id), data: { turbo_method: :post }, class: "practice_favorites" %>
-    <% end %>
-  </div>
+      <%= render partial: "favorites/favorite", locals: { practice: practice } %>
+    </div>
     <% if practice.videos.attached? %>
       <% if practice.videos[0].image? %>
         <%= image_tag practice.videos[0], class: :card__img %>
