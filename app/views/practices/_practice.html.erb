@@ -11,6 +11,9 @@
       <% else %>
         <%= video_tag url_for(practice.videos[0]), class: :card__img, controls: true %>
       <% end %>
-    <% end %> 
+    <% end %>
+    <div id="like-btn<%= practice.id %>", class="favorite__location">
+      <%= render partial: "favorites/favorite", locals: { practice: practice } %>
+    </div> 
   </div>
 </div>

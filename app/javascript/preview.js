@@ -20,12 +20,13 @@ document.addEventListener('turbo:load', function(){
     previewWrapper.style.alignItems = 'center'; // 縦方向に中央寄せ
     previewWrapper.style.paddingBottom = '10px'; // 縦方向に中央寄せ
 
-    // 表示する画像を生成
-    const previewVideo= document.createElement('video');
-    previewVideo.setAttribute('class', 'preview-video');
-    previewVideo.setAttribute('src', blob);
-    previewVideo.setAttribute('width', '50%'); // 幅を300ピクセルに指定（適宜調整)
+    // 表示する動画を生成
+    const previewMedia= document.createElement('video');
+    previewMedia.setAttribute('class', 'preview-video');
+    previewMedia.setAttribute('src', blob);
+    previewMedia.setAttribute('width', '50%'); 
 
+    
     // 削除ボタンを生成
     const deleteButton = document.createElement("div");
     deleteButton.setAttribute("class", "video-delete-button");
@@ -35,7 +36,7 @@ document.addEventListener('turbo:load', function(){
     deleteButton.addEventListener("click", () => deleteVideo(dataIndex));
 
     // 生成したHTMLの要素をブラウザに表示させる
-    previewWrapper.appendChild(previewVideo);
+    previewWrapper.appendChild(previewMedia);
     previewWrapper.appendChild(deleteButton);
     previewList.appendChild(previewWrapper);
   };
@@ -93,12 +94,12 @@ document.addEventListener('turbo:load', function(){
 
     if (alreadyPreview) {
       // クリックしたfile_fieldのdata-indexと、同じ番号のプレビュー画像が既に表示されている場合は、画像の差し替えのみを行う
-      const alreadyPreviewImage = alreadyPreview.querySelector("video");
+      const alreadyPreviewImage = alreadyPreview.querySelector("video, img");
       alreadyPreviewImage.setAttribute("src", blob);
       return null;
     };
 
-    buildPreviewVideo(dataIndex, blob);
+    buildPreviewVideo(dataIndex, blob, file);
 
     // 画像の枚数制限に引っかからなければ、新しいfile_fieldを追加する
     const imageCount = document.querySelectorAll(".preview").length;
