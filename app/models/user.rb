@@ -6,7 +6,7 @@ class User < ApplicationRecord
   
    has_many :practices
    has_many :comments
-#  has_many :favorites, dependent: :destroy 
+   has_many :favorites, dependent: :destroy 
   
   # バリデーション設定
   validates :nickname, presence: true

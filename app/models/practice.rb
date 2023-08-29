@@ -1,8 +1,12 @@
 class Practice < ApplicationRecord
   belongs_to :user
   has_many :comments
-  # has_many :favorites, dependent: :destroy
+  has_many :favorites, dependent: :destroy
   has_many_attached :videos
+
+  def favorited_by?(user)
+    favorites.where(user_id: user.id).exists?
+  end
   
   extend ActiveHash::Associations::ActiveRecordExtensions
   belongs_to :player

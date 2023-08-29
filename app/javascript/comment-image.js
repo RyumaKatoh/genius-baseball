@@ -26,16 +26,16 @@ document.addEventListener('turbo:load', function(){
      previewWrapper.setAttribute('class', 'preview');
 
      // 表示するメディアを生成
-let previewMedia;
+     let previewMedia;
 
- if (file.type.includes('image')) {
-  previewMedia = document.createElement('img');
-} else {
-  previewMedia = document.createElement('video');
-}
-previewMedia.setAttribute('class', 'preview-media');
-previewMedia.setAttribute('src', blob);
-previewMedia.setAttribute('width', '50%');
+     if (file.type.includes('image')) {
+       previewMedia = document.createElement('img');
+     } else {
+       previewMedia = document.createElement('video');
+     }
+     previewMedia.setAttribute('class', 'preview-media');
+     previewMedia.setAttribute('src', blob);
+     previewMedia.setAttribute('width', '50%');
  
      // 生成したHTMLの要素をブラウザに表示させる
      previewWrapper.appendChild(previewMedia);

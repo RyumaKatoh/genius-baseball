@@ -251,6 +251,11 @@ a {
   text-align: right;
   text-decoration: underline;
 }
+.practice_favorites{
+  color:white;
+  border:  1px solid white;
+  border-radius: 3px;
+}
 
 /* 詳細ページ */
 .practice__wrapper{
