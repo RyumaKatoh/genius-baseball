@@ -4,7 +4,7 @@
       <p class="practice__hedding">
         <%= @practice.attempt.name%>
       </p>
-      <%= link_to "投稿者　 #{@practice.user.nickname}", user_path(practice.user.id), class: :practice__user %>
+      <%= link_to "投稿者 #{@practice.user.nickname}", user_path(@practice.user_id), class: :practice__user %>
       <% if user_signed_in? && @practice.user_id == current_user.id %>
         <div class="practice__manage">
           <%= link_to "編集する", edit_practice_path(@practice.id), class: :practice__btn %>

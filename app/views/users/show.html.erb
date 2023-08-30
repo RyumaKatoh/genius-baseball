@@ -1,12 +1,32 @@
 <div class="main">
   <div class="inner">
     <div class="user__wrapper">
-      <h2 class="page-heading1">
+      <table class="table">
+        <th class="table__col1">
+          <%=link_to "投稿一覧" %>
+        </th>
+        <th class="table__col2">
+          <%= link_to "お気に入り一覧" %>
+        </th>
+      </table>
+      <h2 class="page-heading">
         <%= "#{@user.nickname}さんの練習投稿"%>
       </h2>
       <div class="user__card">
         <%= render partial: "practices/practice", collection: @practices %>
-      </div>
+      </div>  
     </div>
+    <div class="user__wrapper">
+      <h2 class="page-heading">
+        <%= "#{@user.nickname}さんのお気に入り一覧"%>
+      </h2>
+      <div class="user__card">
+        <% if @favorite_list.present?%>
+        <% @favorite_list.each do |practice| %>
+          <%= render partial: 'practices/practice', locals: { practice: practice } %> 
+        <% end %>
+        <% end %>
+      </div> 
+    </div>  
   </div>
 </div>
