@@ -1,6 +1,6 @@
 <%if @practices.present? %>
   <h2 class="page-heading">
-    <%= "#{@user.nickname}さんの練習投稿"%>
+    <%= "#{@user.nickname}さんの投稿一覧"%>
   </h2>
   <div class="user__card">
     <%= render partial: "practices/practice", collection: @practices %>
