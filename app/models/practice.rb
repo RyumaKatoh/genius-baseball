@@ -21,4 +21,12 @@ class Practice < ApplicationRecord
   with_options presence: true do
     validates :videos
   end
+
+  def self.ransackable_attributes(auth_object = nil)
+    ["player_id", "attempt_id" ]
+  end
+
+  def self.ransackable_associations(auth_object = nil)
+    ["user"]
+  end
 end
