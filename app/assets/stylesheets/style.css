@@ -81,7 +81,7 @@ a {
 }
 .nav__btn{
   display: inline-block;
-  padding: 0.7em 2.8em;
+  padding: 0.6em 2.8em;
   font-size: 0.8em;
   font-weight:bold;
   color: red;
@@ -91,12 +91,25 @@ a {
   border-radius: 3px;
   transition: 0.4s ease;
   margin-right: 10px;
+  margin-bottom: 10px;
 }
 .nav__btn:hover{
   color: #fff;
   background: #87CEFA;
 }
-
+.nav__mypage{
+  display: inline-block;
+  padding: 0.4em 2.8em;
+  font-size: 0.8em;
+  font-weight:bold;
+  color: red;
+  text-decoration: none;
+  user-select: none;
+  border-radius: 3px;
+  transition: 0.4s ease;
+  margin-right: 10px;
+  margin-bottom: 10px;
+}
 .nav__logout{
   display: inline-block;
   padding: 0.7em 2.8em;

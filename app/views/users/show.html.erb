@@ -1,32 +1,20 @@
 <div class="main">
   <div class="inner">
-    <div class="user__wrapper">
-      <table class="table">
-        <th class="table__col1">
-          <%=link_to "投稿一覧" %>
-        </th>
-        <th class="table__col2">
-          <%= link_to "お気に入り一覧" %>
-        </th>
-      </table>
-      <h2 class="page-heading">
-        <%= "#{@user.nickname}さんの練習投稿"%>
-      </h2>
-      <div class="user__card">
-        <%= render partial: "practices/practice", collection: @practices %>
-      </div>  
+  <div class="area">
+    <% if current_user.id == @user.id %>
+    <input type="radio" name="tab_name" id="tab1" checked>
+    <label class="tab_class" for="tab1">投稿一覧</label>
+    <div class="content_class">
+      <p><%= render partial: 'users/practice_content', locals: { active_tab: @active_tab } %></p>
     </div>
-    <div class="user__wrapper">
-      <h2 class="page-heading">
-        <%= "#{@user.nickname}さんのお気に入り一覧"%>
-      </h2>
-      <div class="user__card">
-        <% if @favorite_list.present?%>
-        <% @favorite_list.each do |practice| %>
-          <%= render partial: 'practices/practice', locals: { practice: practice } %> 
-        <% end %>
-        <% end %>
-      </div> 
-    </div>  
+    <input type="radio" name="tab_name" id="tab2" >
+    <label class="tab_class" for="tab2">お気に入り一覧</label>
+    <div class="content_class">
+      <p><%= render partial: 'users/favorite_content', locals: { active_tab: @active_tab } %> </p>
+    </div>
+  </div>
+  <% else %>
+   <%= render partial: 'users/practice_content', locals: { active_tab: @active_tab } %>
+  <% end %>
   </div>
 </div>
