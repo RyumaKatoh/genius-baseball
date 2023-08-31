@@ -29,5 +29,9 @@ class User < ApplicationRecord
   # 全角文字を含むパスワードでは登録できない
   PASSWORD_REGEX = /\A[a-zA-Z\d]+\z/.freeze
   validates_format_of :password, with: PASSWORD_REGEX, message: 'is invalid. The password cannot contain full-width characters.' 
-
+  
+  def self.ransackable_attributes(auth_object = nil)
+    ["nickname"]
+  end
+  
 end

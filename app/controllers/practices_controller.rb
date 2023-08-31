@@ -3,7 +3,9 @@ class PracticesController < ApplicationController
   before_action :set_practice, only: [:show, :edit, :update, :destroy]
 
   def index
-    @practices = Practice.includes(:user).order(created_at: :desc) 
+    @practices = Practice.includes(:user).order(created_at: :desc)
+    @q = Practice.ransack(params[:q]) 
+    @practices1 = @q.result
   end  
 
   def new
@@ -41,6 +43,11 @@ class PracticesController < ApplicationController
       render :edit, status: :unprocessable_entity  
     end   
   end  
+
+  def search
+    @q = Practice.ransack(params[:q])
+    @practices = @q.result
+  end
 
   def destroy
     if user_signed_in? && @practice.user == current_user

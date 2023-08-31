@@ -48,7 +48,6 @@ a {
 
 .header {
   background-color:aquamarine;
-  /* margin-bottom: 48px; */
   padding: 20px 0;
 
 }
@@ -124,7 +123,9 @@ a {
 }
 
 /* フォーム周り */
-
+.practice-contents{
+  min-height: calc(100vh - 161px);
+}
 .page-heading1{
   text-align: center;
   margin-bottom: 20px;
@@ -207,8 +208,8 @@ a {
 /* メイン */
 
 .greeting{
-  margin-bottom: 20px;
-  font-size:25px;
+  margin-bottom: 1.2em;
+  font-size: 1.2em;
 
 }
 .greeting__link{
@@ -231,7 +232,7 @@ a {
 }
 .card {
   width: calc((100% - 50px) / 3);
-  margin-bottom: 40px;
+  margin-bottom: 20px;
   color:#fafafa;
 }
 .card__body{
@@ -252,7 +253,6 @@ a {
 .card__header{
   display: flex;
   justify-content: space-between;
-  margin-bottom;:10px
 }
 .card__summary {
   font-size: 16px;
