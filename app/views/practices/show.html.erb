@@ -3,6 +3,7 @@
     <div class="practice__wrapper">
       <p class="practice__hedding">
         <%= @practice.attempt.name%>
+        <%= "(#{@practice.player.name})" %>
       </p>
       <%= link_to "投稿者 #{@practice.user.nickname}", user_path(@practice.user_id), class: :practice__user %>
       <% if user_signed_in? && @practice.user_id == current_user.id %>
