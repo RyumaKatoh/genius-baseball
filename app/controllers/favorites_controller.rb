@@ -1,11 +1,11 @@
 class FavoritesController < ApplicationController
-  before_action :set_practice
+  before_action :set_practice, only: [ :create, :destroy] 
 
   def create
     favorite = current_user.favorites.build(practice_id: params[:practice_id])
     favorite.save
     render partial: "favorites/favorite", locals: { practice: @practice }
-    # respond_to do |format|
+    # respond_to do |format| 
     #   format.js
     # end
   end

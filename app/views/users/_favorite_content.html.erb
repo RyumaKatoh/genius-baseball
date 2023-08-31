@@ -1,0 +1,10 @@
+<% if @favorite_list.present? %>
+  <h2 class="page-heading">
+    <%= "#{@user.nickname}さんのお気に入り一覧"%>
+  </h2>
+  <div class="user__card">
+    <% @favorite_list.each do |practice| %>
+      <%= render partial: 'practices/practice', locals: { practice: practice } %> 
+    <% end %>
+  </div>
+<% end %>

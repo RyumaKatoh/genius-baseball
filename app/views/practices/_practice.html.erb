@@ -3,7 +3,7 @@
     <font color="white"><%= link_to practice.player.name, practice_path(practice.id), class: :card__title%></font>
     <div class="card__header">
       <%= link_to practice.attempt.name, practice_path(practice.id), class: :card__summary %>
-      <%= link_to "投稿者　 #{practice.user.nickname}",root_path, class: :card__user %>
+      <%= link_to "投稿者　 #{practice.user.nickname}",user_path(practice.user.id), class: :card__user %>
     </div>
     <% if practice.videos.attached? %>
       <% if practice.videos[0].image? %>
@@ -12,8 +12,10 @@
         <%= video_tag url_for(practice.videos[0]), class: :card__img, controls: true %>
       <% end %>
     <% end %>
+    <% unless current_user == practice.user%>
     <div id="like-btn<%= practice.id %>", class="favorite__location">
       <%= render partial: "favorites/favorite", locals: { practice: practice } %>
-    </div> 
+    </div>
+    <% end %> 
   </div>
 </div>
