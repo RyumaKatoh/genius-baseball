@@ -318,6 +318,11 @@ a {
   content: '';
   transition: height .3s ease;
 }
+.pagination{
+  font-weight: bold;
+  color:#f6f6f6;
+  font-size: 15px;
+}
 
 /* 詳細ページ */
 .practice__wrapper{

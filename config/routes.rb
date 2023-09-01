@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   devise_for :users
-  root to: "practices#search"
+  root to: "practices#index"
 #   # マイページのルーティングにネスト
   resources :users, only: [:show] do
     get :favorites, on: :collection

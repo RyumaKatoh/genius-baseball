@@ -2,7 +2,7 @@
   <div class="card__body">
     <div class="card__header">
       <%= link_to "#{practice.attempt.name}(#{practice.player.name})", practice_path(practice.id), class: :card__summary %>
-      <%= link_to "投稿者　 #{practice.user.nickname}",user_path(practice.user.id), class: :card__user %>
+      <%= link_to "投稿者 #{practice.user.nickname}",user_path(practice.user.id), class: :card__user %>
     </div>
     <% if practice.videos.attached? %>
       <% if practice.videos[0].image? %>
