@@ -1,22 +1,38 @@
 <main class="main">
   <div class="inner">
-   <h3><%= link_to '投稿動画一覧', "#" %></h3>
-   <h3><%= link_to '検索トップページへ戻る', root_path%></h3>
-    <% if user_signed_in? %>
+  <% if user_signed_in? %>
       <div class="greeting">
         <%= link_to "#{current_user.nickname}さん！", "/users/#{current_user.id}", class: :greeting__link%>
         <font color="white"><%= "練習動画をまとめておきましょう！" %></font>
       </div>
     <% end %>
+   <div class='practice-contents' id="detailed-search-result-wrapper">
+  <%= search_form_for @q, url: search_practices_path, html: {id: "detailed-search-form"} do |f| %>
+    <div class="search-field">
+      <%= f.label :user_nickname_cont, '投稿者名', class: "search-label" %>
+      <br>
+      <%= f.text_field :user_nickname_cont, placeholder: '投稿者名' %>
+    </div>
+    <div class="search-field">
+      <%= f.label :player_id_eq, '投打の選択', class: "search-label" %>
+      <br>
+      <%= f.collection_select(:player_id_eq, Player.where.not(id:1), :id, :name, {include_blank: "-----"}, {class: 'search-select'}) %>
+    </div>
+    <div class="search-field">
+      <%= f.label :attempt_id_eq, '取り組み内容の選択', class: "search-label" %>
+      <br>
+      <%= f.collection_select(:attempt_id_eq, Attempt.where.not(id:1), :id, :name, {include_blank: "-----"}, {class: 'search-select'}) %>
+    </div> 
+    <%= f.submit '検索', class: 'search-button' %>
+  <% end %>
+  <ul class='practice-lists' id="detailed-search-result">
     <div class="card__wrapper">
       <%= render partial: 'practice', collection: @practices %>
     </div>
-
-   <h2 class="page-heading">
-    <%= "検索一覧"%>
-  </h2>
-    <div class="card__wrapper">
-      <%= render partial: 'practice', collection: @practices1 %>
-    </div>
+  </ul>
+  <%# <div class="pagination"> %>
+    <font color="white"><%= paginate @practices %></font>
+  <%# </div>  %>
+</div>
   </div>
 </main>

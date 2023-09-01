@@ -1,11 +1,19 @@
 class PracticesController < ApplicationController
   before_action :authenticate_user!, only: [:new, :edit, :destroy]
-  before_action :set_practice, only: [:show, :edit, :update, :destroy]
+  before_action :set_practice, only: [:show, :edit, :update, :destroy ]
+
+
+  def search
+    @q = Practice.ransack(params[:q])
+    @practices = @q.result.page(params[:page]).per(5)
+  end
 
   def index
-    @practices = Practice.includes(:user).order(created_at: :desc)
-    @q = Practice.ransack(params[:q]) 
-    @practices1 = @q.result
+    @q = Practice.ransack(params[:q])
+    @practices = @q.result.order(created_at: :desc).page(params[:page]).per(5)
+    # @practices = Practice.includes(:user).order(created_at: :desc).page(params[:page]).per(5)
+    # @q = Practice.ransack(params[:q]) 
+    # @practices1 = @q.result
   end  
 
   def new
@@ -43,11 +51,6 @@ class PracticesController < ApplicationController
       render :edit, status: :unprocessable_entity  
     end   
   end  
-
-  def search
-    @q = Practice.ransack(params[:q])
-    @practices = @q.result
-  end
 
   def destroy
     if user_signed_in? && @practice.user == current_user
