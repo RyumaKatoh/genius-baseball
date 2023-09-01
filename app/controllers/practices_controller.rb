@@ -1,11 +1,11 @@
 class PracticesController < ApplicationController
   before_action :authenticate_user!, only: [:new, :edit, :destroy]
-  before_action :set_practice, only: [:show, :edit, :update, :destroy]
+  before_action :set_practice, only: [:show, :edit, :update, :destroy ]
 
   def index
     @practices = Practice.includes(:user).order(created_at: :desc)
-    @q = Practice.ransack(params[:q]) 
-    @practices1 = @q.result
+    # @q = Practice.ransack(params[:q]) 
+    # @practices1 = @q.result
   end  
 
   def new

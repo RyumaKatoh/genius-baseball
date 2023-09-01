@@ -1,6 +1,8 @@
 <main class="main">
   <div class="inner">
-   <h3><%= link_to '投稿動画一覧', "#" %></h3>
+   <h2 class="page-heading">
+    <%= "投稿動画一覧ページ"%>
+  </h2>
    <h3><%= link_to '検索トップページへ戻る', root_path%></h3>
     <% if user_signed_in? %>
       <div class="greeting">
@@ -10,13 +12,6 @@
     <% end %>
     <div class="card__wrapper">
       <%= render partial: 'practice', collection: @practices %>
-    </div>
-
-   <h2 class="page-heading">
-    <%= "検索一覧"%>
-  </h2>
-    <div class="card__wrapper">
-      <%= render partial: 'practice', collection: @practices1 %>
     </div>
   </div>
 </main>
