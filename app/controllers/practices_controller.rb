@@ -5,7 +5,7 @@ class PracticesController < ApplicationController
 
   def search
     @q = Practice.ransack(params[:q])
-    @practices = @q.result.page(params[:page]).per(5)
+    @practices = @q.result.order(created_at: :desc).page(params[:page]).per(5)
   end
 
   def index

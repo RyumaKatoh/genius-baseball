@@ -6,6 +6,7 @@
     <label class="tab_class" for="tab1">投稿一覧</label>
     <div class="content_class">
       <p><%= render partial: 'users/practice_content', locals: { active_tab: @active_tab } %></p>
+      <font color="white"><%= paginate @practices %></font>
     </div>
     <input type="radio" name="tab_name" id="tab2" >
     <label class="tab_class" for="tab2">お気に入り一覧</label>
