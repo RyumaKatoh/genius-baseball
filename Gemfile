@@ -72,7 +72,8 @@ group :test do
 end
 
 group :production do
-  gem 'pg'
+  # gem 'pg'
+  gem 'unicorn', '6.1.0'
 end
 
 gem "devise"
@@ -83,3 +84,4 @@ gem 'pry-rails'
 gem 'ransack'
 gem 'kaminari'
 gem "aws-sdk-s3", require: false
+

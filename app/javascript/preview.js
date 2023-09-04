@@ -18,7 +18,7 @@ document.addEventListener('turbo:load', function(){
     previewWrapper.style.display = 'flex'; // フレックスコンテナとして設定
     previewWrapper.style.justifyContent = 'center'; // 横方向に中央寄せ
     previewWrapper.style.alignItems = 'center'; // 縦方向に中央寄せ
-    previewWrapper.style.paddingBottom = '10px'; // 縦方向に中央寄せ
+    previewWrapper.style.paddingBottom = '10px'; 
 
     // 表示する動画を生成
     const previewMedia= document.createElement('video');
