@@ -3,7 +3,7 @@
   <div class="inner">
   <% if user_signed_in? %>
       <div class="greeting">
-        <%= link_to "#{current_user.nickname}さん！", "/users/#{current_user.id}", class: :greeting__link%>
+        <%= link_to "#{current_user.nickname}さん！", "/users/#{current_user.id}", class: :greeting__link%></br>
         <font color="white"><%= "練習動画をまとめておきましょう！" %></font>
       </div>
     <% end %>
