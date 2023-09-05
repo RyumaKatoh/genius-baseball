@@ -31,7 +31,7 @@ class PracticesController < ApplicationController
 
   def show
     @comment = Comment.new
-    @comments = @practice.comments.includes(:user)
+    @comments = @practice.comments.includes(:user).order(created_at: :desc)
   end  
 
   def edit

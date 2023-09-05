@@ -2,7 +2,7 @@
   <div class="backimage">
   <div class="inner">
   <div class="area">
-    <% if current_user.id == @user.id %>
+    <% if user_signed_in? && current_user.id == @user.id %>
     <input type="radio" name="tab_name" id="tab1" checked>
     <label class="tab_class" for="tab1">投稿一覧</label>
     <div class="content_class">
