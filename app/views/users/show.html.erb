@@ -1,4 +1,5 @@
 <div class="main">
+  <div class="backimage">
   <div class="inner">
   <div class="area">
     <% if current_user.id == @user.id %>
@@ -8,7 +9,7 @@
       <p><%= render partial: 'users/practice_content', locals: { active_tab: @active_tab } %></p>
       <font color="white"><%= paginate @practices %></font>
     </div>
-    
+
     <input type="radio" name="tab_name" id="tab2" >
     <label class="tab_class" for="tab2">お気に入り一覧</label>
     <div class="content_class">
@@ -18,5 +19,6 @@
   <% else %>
    <%= render partial: 'users/practice_content', locals: { active_tab: @active_tab } %>
   <% end %>
+  </div>
   </div>
 </div>

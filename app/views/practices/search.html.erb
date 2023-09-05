@@ -1,4 +1,5 @@
 <main class="main">
+  <div class="backimage">
   <div class="inner">
   <% if user_signed_in? %>
       <div class="greeting">
@@ -33,4 +34,6 @@
       <font color="white"><%= paginate @practices %></font>
 </div>
   </div>
+  </div>
+  <%= render "shared/footer" %>
 </main>

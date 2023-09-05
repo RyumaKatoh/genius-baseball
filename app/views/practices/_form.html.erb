@@ -1,3 +1,4 @@
+<div class="backimage">
 <div class="fielder">
 <%= form_with model: @practice, id: "new_practice", local: true do |f|%>
 <%= render 'shared/error_messages', model: f.object %>
@@ -29,4 +30,5 @@
     <%= f.submit "投稿する", class: :form__btn  %>
   </div>
 <% end %>
+</div>
 </div>
