@@ -163,8 +163,12 @@ a {
   display: flex;
   justify-content:center;
 }
+.field2{
+  margin-left:13%;
+  height:20px;
+}
 .field1{
-  margin: 10px 20px;
+  margin: 0px 20px;
 }
 .field{
   margin: 20px 0;
@@ -399,7 +403,7 @@ a {
   margin-bottom: 10px;
 }
 
-.field2{
+.field3{
   text-align: center;
   margin-top: 40px;
 }
