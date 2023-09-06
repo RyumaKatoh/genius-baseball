@@ -12,3 +12,11 @@
   margin: 10px 0 20px 0;
   cursor: pointer;
 }
+
+.search-fielder{
+  display: flex;
+}
+
+.search-field{
+  margin-right: 25px;
+}

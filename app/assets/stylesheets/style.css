@@ -330,6 +330,15 @@ a {
   border: 1px solid white;
   padding-left: 20px;
 }
+.practice__bottom{
+  display: flex;
+  justify-content: space-between;
+}
+.card__shosai{
+  font-size: 16px;
+  color:#f5f5f5;
+  border: #2589d0;
+}
 
 /* 詳細ページ */
 .practice__wrapper{

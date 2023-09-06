@@ -11,12 +11,15 @@
         <%= video_tag url_for(practice.videos[0]), class: :card__img, controls: true %>
       <% end %>
     <% end %>
+    <div class="practice__bottom">
+    <%= link_to "コメント(投稿詳細)へ", practice_path(practice.id), class: :card__summary %>
     <% if user_signed_in?%>
       <% unless current_user == practice.user%>
         <div id="like-btn<%= practice.id %>", class="favorite__location">
           <%= render partial: "favorites/favorite", locals: { practice: practice } %>
         </div>
       <% end %>
-    <% end %> 
+    <% end %>
+    </div> 
   </div>
 </div>
