@@ -37,7 +37,7 @@
       <div class="practice__comments">
         <%# コメントフォームは常に表示するが、未ログイン状態で投稿しようとしたらログイン画面へ %> 
           <%= form_with model: [@practice, @comment], id: "new_comment", local: true do |f|%>
-            <div class="field2">
+            <div class="field3">
               <%= f.label :content, "～ コメント ～", class:"comment__header" %><br />
               <div id="comments"></div>
               <%= f.file_field :video, name: "comment[video]", id:"practice_video" %> 

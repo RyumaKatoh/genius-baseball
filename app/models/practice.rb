@@ -22,6 +22,8 @@ class Practice < ApplicationRecord
     validates :videos
   end
 
+  # validate :avatar_size
+
   def self.ransackable_attributes(auth_object = nil)
     ["player_id", "attempt_id" ]
   end
@@ -29,4 +31,13 @@ class Practice < ApplicationRecord
   def self.ransackable_associations(auth_object = nil)
     ["user"]
   end
+
+  # def avatar_size
+  #   avatars.each do |avatar|
+  #     if avatar.blob.byte_size > 100.megabytes
+  #       avatar.purge
+  #       errors.add(:avatars, "は1つのファイル100MB以内にしてください")
+  #     end
+  #   end
+  # end
 end
