@@ -12,13 +12,13 @@
     <%= f.collection_select(:attempt_id, Attempt.all, :id, :name, {}, {class: :form_serect, id:"prototype_catch_copy"}) %>
   </div>
  </div>
-   <select class="field2">
-     <%= f.label :user_id, "プレーしている選手" %><br />
-     <option value="">プレーしている選手の名前</option>
+   <%# <select class="field2">
+     <%= f.label :user_id, "プレーしている選手" %>
+     <%# <option value="">プレーしている選手の名前</option>
        <% User.where.not(id: current_user.id).each do |user| %>
-         <option><%= user.nickname %></option>
-       <% end %>
-   </select>
+         <%# <option><%= user.nickname</option> %>
+       <%# <% end %>
+   <%# </select>    %>
   <div class="field">
     <%= f.label :videos, "練習の動画（画像も可）" %><br />
     <div id="previews"></div>
