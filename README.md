@@ -31,6 +31,7 @@ Genius Baseball
 ### 現在の実装内容（主要部のみ）
 [![Image from Gyazo](https://i.gyazo.com/44729187d260774b81224b2c1875bbe2.jpg)](https://gyazo.com/44729187d260774b81224b2c1875bbe2)
 [![Image from Gyazo](https://i.gyazo.com/b56faf6feb20393641143a9b091c406d.jpg)](https://gyazo.com/b56faf6feb20393641143a9b091c406d)
+[![Image from Gyazo](https://i.gyazo.com/0ab687b2da74ec48c6115e725131add5.jpg)](https://gyazo.com/0ab687b2da74ec48c6115e725131add5)
 [![Image from Gyazo](https://i.gyazo.com/a4c20d5f189fe0051f38c27f2d87cb2a.jpg)](https://gyazo.com/a4c20d5f189fe0051f38c27f2d87cb2a)
 [![Image from Gyazo](https://i.gyazo.com/d686240c7ac92dc5fd2b192ffb17c169.jpg)](https://gyazo.com/d686240c7ac92dc5fd2b192ffb17c169)
 [![Image from Gyazo](https://i.gyazo.com/f51623da25553580a31e90a388ac10a0.jpg)](https://gyazo.com/f51623da25553580a31e90a388ac10a0)
