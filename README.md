@@ -23,16 +23,17 @@ Genius Baseball
 3.headerのユーザー名を押下し、マイページに遷移する  
 4.「お気に入り一覧」にタブを切り替えて、先ほどお気に入りした投稿が一番上に来ることを確認する。  
 ### アプリケーションを作成した背景
-日常の練習の中で撮影した練習動画を、自分の画像フォルダで管理しながら、LINEで送るという工程が非常に不便である。  
-そのためLINEでは日常のやり取りを行い、練習動画のアドバイスや自分の動画管理は野球専門の管理アプリを用いることで区別する。  
+日常の練習の中で撮影した練習動画を、自分の画像フォルダで管理しながら、LINEで送るという工程が非常に不便である。
+そのためLINEでは日常のやり取りを行い、練習動画のアドバイスや自分の動画管理は野球専門の管理アプリを用いることで区別する。
 また、チーム単位でアプリを使用することで、チームメイトや監督コーチに日常の自主練習の内容も見てもらうことができる。
 ### 要件定義
   (https://docs.google.com/spreadsheets/d/1nPpeGkitFd_Oe-3uQ_aWS41nsE6YCtSGn1e5cBcvQtk/edit#gid=982722306)
 ### 現在の実装内容（主要部のみ）
-[![Image from Gyazo](https://gyazo.com/7d6a4f3e884faf9524ca65f7fbeb59f8.png)](https://gyazo.com/7d6a4f3e884faf9524ca65f7fbeb59f8)
-[![Image from Gyazo](https://gyazo.com/23c9cba8aec31cab6718b7fc522989e6.png)](https://gyazo.com/23c9cba8aec31cab6718b7fc522989e6)
-[![Image from Gyazo](https://gyazo.com/9c4ae94d69af412f0f74cda0ff274e2a.png)](https://gyazo.com/9c4ae94d69af412f0f74cda0ff274e2a)
-[![Image from Gyazo](https://gyazo.com/e7156a2203967ec47875eaf1b807a1fd.png)](https://gyazo.com/e7156a2203967ec47875eaf1b807a1fd)
+[![Image from Gyazo](https://i.gyazo.com/44729187d260774b81224b2c1875bbe2.jpg)](https://gyazo.com/44729187d260774b81224b2c1875bbe2)
+[![Image from Gyazo](https://i.gyazo.com/b56faf6feb20393641143a9b091c406d.jpg)](https://gyazo.com/b56faf6feb20393641143a9b091c406d)
+[![Image from Gyazo](https://i.gyazo.com/a4c20d5f189fe0051f38c27f2d87cb2a.jpg)](https://gyazo.com/a4c20d5f189fe0051f38c27f2d87cb2a)
+[![Image from Gyazo](https://i.gyazo.com/d686240c7ac92dc5fd2b192ffb17c169.jpg)](https://gyazo.com/d686240c7ac92dc5fd2b192ffb17c169)
+[![Image from Gyazo](https://i.gyazo.com/f51623da25553580a31e90a388ac10a0.jpg)](https://gyazo.com/f51623da25553580a31e90a388ac10a0)
 ### 開発環境
 ・フロントエンド：HTML/CSS Javascript  
 ・バックエンド：Ruby/Ruby on Rails  
