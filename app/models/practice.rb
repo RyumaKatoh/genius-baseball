@@ -4,6 +4,15 @@ class Practice < ApplicationRecord
   has_many :favorites, dependent: :destroy
   has_many_attached :videos
 
+  # 日付検索機能実装のため
+  ransacker :created_at_gteq, type: :date do
+    arel_table[:created_at].gteq(val)
+  end
+
+  ransacker :created_at_lteq, type: :date do
+    arel_table[:created_at].lteq(val)
+  end
+
   def favorited_by?(user)
     favorites.where(user_id: user.id).exists?
   end

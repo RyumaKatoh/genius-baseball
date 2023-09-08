@@ -93,4 +93,4 @@ gem 'pry-rails'
 gem 'ransack'
 gem 'kaminari'
 gem "aws-sdk-s3", require: false
-
+gem 'pg_search'

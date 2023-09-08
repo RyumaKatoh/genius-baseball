@@ -26,6 +26,18 @@
       <%= f.collection_select(:attempt_id_eq, Attempt.where.not(id:1), :id, :name, {include_blank: "-----"}, {class: 'search-select'}) %>
     </div> 
     </div>
+    <!-- 日付の検索条件を追加 -->
+  <%# <div class="search-field">
+    <%= f.label :created_at_gteq, '投稿日時の開始日', class: "search-label" %>
+    <%# <br> %>
+    <%# <%= f.date_field :created_at_gteq, class: 'search-date-field' %> 
+  <%# </div> %>
+  <%# <div class="search-field"> %>
+    <%# <%= f.label :created_at_lteq, '投稿日時の終了日', class: "search-label" %>
+    <%# <br> %>
+    <%# <%= f.date_field :created_at_lteq, class: 'search-date-field' %> 
+  <%# </div>  %>
+  <!-- 日付の検索条件を追加 -->
     <%= f.submit '検索', class: 'search-button' %>
   <% end %>
   <ul class='practice-lists' id="detailed-search-result">
